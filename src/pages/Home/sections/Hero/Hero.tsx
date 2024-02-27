@@ -11,7 +11,13 @@ const Hero = () => {
       backgroundColor: theme.palette.primary.main,
       height: "100vh",
       display: "flex",
-      alignItems: "center"
+      alignItems: "center",
+      [theme.breakpoints.up('xs')]: { //<= Mobile.
+          paddingTop: "150px"
+      },
+      [theme.breakpoints.up('md')]: {// >= Mobile.
+        paddingTop: "0px"
+      }
     }))
 
     const StyledImg = styled("img") (({theme}) => ({
@@ -39,7 +45,7 @@ const Hero = () => {
                 <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>Yago Silva</Typography>
                 <Typography color="primary.contrastText" variant="h2" textAlign="center">I'm a Software Engineer</Typography>
 
-                <Grid container display="flex" justifyContent="center" spacing={3} pb={3}>
+                <Grid container display="flex" justifyContent="center" spacing={3} pb={3} pt={3}>
                     <Grid item xs={12} md={6} display="flex" justifyContent="center">
                         <StyledButton>
                         <DownloadIcon />  
